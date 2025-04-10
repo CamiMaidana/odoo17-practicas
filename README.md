@@ -4,7 +4,7 @@ Este repositorio contiene módulos personalizados para Odoo 17 Community.
 
 ## Estructura
 
-- `addons/`: módulos personalizados
+- `custom-addons/`: módulos personalizados
 - `odoo.sh.yml`: archivo de configuración para despliegue
 
 ## Requisitos locales
