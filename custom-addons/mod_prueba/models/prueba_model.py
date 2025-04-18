@@ -25,6 +25,9 @@ class mod_prueba(models.Model):
     )
 
     responsable_id = fields.Many2one('res.partner', string="Responsable")
+
+    tarea_ids = fields.One2many('tarea.prueba', 'idea_id', string="Tareas")
+    
     def action_confirmar(self):
         for record in self:
             if not record.name:

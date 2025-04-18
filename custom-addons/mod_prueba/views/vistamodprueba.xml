@@ -77,13 +77,22 @@
                         string="Confirmar"
                         class="btn btn-primary"/>
               </div>
+            <notebook>
+              <page string="Tareas">
+                <field name="tarea_ids">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
 
           </sheet>
-          
-
         </form>
       </field>
     </record>
+
     <record id="view_search_mod_prueba" model="ir.ui.view">
       <field name="name">mod.prueba.search</field>
       <field name="model">mod.prueba</field>
