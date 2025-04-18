@@ -1,22 +1,55 @@
 <odoo>
   <data>
 
-    <!-- Acción -->
+    <!--Vista tipo Tree (lista) -->
+    <record id="view_tree_mod_prueba" model="ir.ui.view">
+      <field name="name">mod.prueba.tree</field>
+      <field name="model">mod.prueba</field>
+      <field name="arch" type="xml">
+        <tree string="Lista de Pruebas">
+          <field name="name"/>
+          <field name="description"/>
+          <field name="value"/>
+        </tree>
+      </field>
+    </record>
+
+    <!--Vista tipo Form (detalle) -->
+    <record id="view_form_mod_prueba" model="ir.ui.view">
+      <field name="name">mod.prueba.form</field>
+      <field name="model">mod.prueba</field>
+      <field name="arch" type="xml">
+        <form string="Prueba">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+              <field name="value"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--Acción para mostrar las vistas -->
     <record model="ir.actions.act_window" id="list_view_mod_prueba">
       <field name="name">Modulo de pruebas</field>
       <field name="res_model">mod.prueba</field>
       <field name="view_mode">tree,form</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_tree_mod_prueba')}),
+          (0, 0, {'view_mode': 'form', 'view_id': ref('view_form_mod_prueba')})]"/>
     </record>
 
-    <!-- Menú raíz visible arriba -->
+    <!--Menú raíz visible -->
     <menuitem name="mod_prueba" id="mod_prueba.menu_root" sequence="10"/>
 
-    <!-- Submenú con acción -->
+    <!--Submenú que abre la acción -->
     <menuitem id="menu_mod_prueba"
               parent="mod_prueba.menu_root"
               name="mod_pruebas_ajutes"
               sequence="20"
               action="list_view_mod_prueba"/>
-              
+
   </data>
 </odoo>
