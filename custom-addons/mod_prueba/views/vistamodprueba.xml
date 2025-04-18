@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+
+    <!-- Acción -->
+    <record model="ir.actions.act_window" id="list_view_mod_prueba">
+      <field name="name">Modulo de pruebas</field>
+      <field name="res_model">mod.prueba</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú raíz visible arriba -->
+    <menuitem name="mod_prueba" id="mod_prueba.menu_root" sequence="10"/>
+
+    <!-- Submenú con acción -->
+    <menuitem id="menu_mod_prueba"
+              parent="mod_prueba.menu_root"
+              name="mod_pruebas_ajutes"
+              sequence="20"
+              action="list_view_mod_prueba"/>
+              
+  </data>
+</odoo>

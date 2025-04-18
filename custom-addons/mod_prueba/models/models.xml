@@ -1,0 +1,9 @@
+<odoo>
+  <data noupdate="1">
+    <record id="model_mod_prueba_mod_prueba" model="ir.model">
+      <field name="name">mod.prueba</field>
+      <field name="model">mod.prueba</field>
+      <field name="state">manual</field>
+    </record>
+  </data>
+</odoo>
