@@ -1,7 +1,7 @@
 <odoo>
   <data>
 
-    <!--Vista tipo Tree (lista) -->
+    Vista tipo Tree (lista) 
     <record id="view_tree_mod_prueba" model="ir.ui.view">
       <field name="name">mod.prueba.tree</field>
       <field name="model">mod.prueba</field>
@@ -14,7 +14,7 @@
       </field>
     </record>
 
-    <!--Vista tipo Form (detalle) -->
+    <!--Vista tipo Form (detalle) 
     <record id="view_form_mod_prueba" model="ir.ui.view">
       <field name="name">mod.prueba.form</field>
       <field name="model">mod.prueba</field>
@@ -29,7 +29,35 @@
           </sheet>
         </form>
       </field>
-    </record>
+    </record-->
+    <record id="view_form_mod_prueba" model="ir.ui.view">
+  <field name="name">mod.prueba.form.html</field>
+  <field name="model">mod.prueba</field>
+  <field name="arch" type="xml">
+    <form string="Formulario con diseño personalizado">
+      <sheet>
+
+        <!-- Título principal -->
+        <div class="oe_title">
+          <h2>Agrega un nombre <field name="name"/></h2>
+        </div>
+
+        <!-- Descripción con etiqueta personalizada -->
+        <div>
+          <p><strong>Descripción:</strong></p>
+          <field name="description" placeholder="Escribí una descripción breve..."/>
+        </div>
+
+        <!-- Valor con ícono -->
+        <div style="margin-top:15px;">
+          <p><strong>Valor estimado:</strong> <field name="value"/></p>
+        </div>
+
+      </sheet>
+    </form>
+  </field>
+</record>
+
 
     <!--Acción para mostrar las vistas -->
     <record model="ir.actions.act_window" id="list_view_mod_prueba">
@@ -53,3 +81,5 @@
 
   </data>
 </odoo>
+
+
